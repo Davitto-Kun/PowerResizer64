@@ -1,0 +1,9 @@
+
+diff --git a/PwrResizerLibrary/PwrResizerLibrary.cpp b/PwrResizerLibrary/PwrResizerLibrary.cpp
+@@
+-    prevWndProc = (WNDPROC)SetWindowLong(hwnd, GWL_WNDPROC, (LONG)TrappedResizeWndProc);
++    prevWndProc = (WNDPROC)SetWindowLongPtr(hwnd, GWLP_WNDPROC, (LONG_PTR)TrappedResizeWndProc);
+
+@@
+-    SetWindowLong(hwnd, GWL_WNDPROC, (LONG)prevWndProc);
++    SetWindowLongPtr(hwnd, GWLP_WNDPROC, (LONG_PTR)prevWndProc);
